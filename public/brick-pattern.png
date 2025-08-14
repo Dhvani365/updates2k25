@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="80">
+  <defs>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00fff7" />
+      <stop offset="100%" stop-color="#00ff87" />
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <pattern id="brickPattern" width="120" height="80" patternUnits="userSpaceOnUse">
+      <!-- Dark background -->
+      <rect width="120" height="80" fill="#05010a" />
+      <!-- Horizontal -->
+      <line x1="0" y1="40" x2="120" y2="40" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)" />
+      <!-- Vertical (top row) -->
+      <line x1="60" y1="0" x2="60" y2="40" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)" />
+      <!-- Vertical (bottom row) -->
+      <line x1="0" y1="40" x2="0" y2="80" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)" />
+      <line x1="120" y1="40" x2="120" y2="80" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)" />
+      <line x1="60" y1="40" x2="60" y2="80" stroke="url(#neonGradient)" stroke-width="2" filter="url(#glow)" />
+    </pattern>
+  </defs>
+  <rect width="120" height="80" fill="url(#brickPattern)" />
+</svg>
